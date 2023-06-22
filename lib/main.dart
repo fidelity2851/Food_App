@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/screens/flash_screen.dart';
+import 'package:food_app/screens/splash_screen.dart';
 
 // Initialize Flutter Main Function
 void main() => runApp(const MovieApp());
