@@ -9,7 +9,7 @@ class AppColor {
   static Color Black = Colors.black;
   static Color White = Colors.white;
   static Color Grey = Colors.grey;
-  static Color Light = Colors.grey.shade500;
+  static Color Light = Colors.grey.shade300;
 }
 
 const double DefaultPadding = 20.0;

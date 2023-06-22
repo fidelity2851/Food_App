@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/commponents/custom_button.dart';
 import 'package:food_app/screens/login_screen.dart';
 import 'package:food_app/utitlity/variables.dart';
 
@@ -45,23 +46,7 @@ class OnboardingScreen extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => const LoginScreen()),
                 );
               },
-              child: Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 50),
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [AppColor.Primary, AppColor.Primary2],
-                    ),
-                    borderRadius: BorderRadius.circular(15)),
-                child: const Text(
-                  'Next',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
+              child: const CustomButton(title: 'Next',),
             )
           ],
         ),
@@ -69,3 +54,4 @@ class OnboardingScreen extends StatelessWidget {
     );
   }
 }
+
