@@ -21,11 +21,13 @@ class _FlashScreenState extends State<FlashScreen> {
   _navigatetohome() async {
     await Future.delayed(
       Duration(milliseconds: delayTime),
-      () {},
-    );
-    Navigator.pushReplacement(
-      (context),
-      MaterialPageRoute(builder: (context) => const OnboardingScreen()),
+      () {
+        // Navigate to Onboarding Screen
+        Navigator.pushReplacement(
+          (context),
+          MaterialPageRoute(builder: (context) => const OnboardingScreen()),
+        );
+      },
     );
   }
 
@@ -37,8 +39,10 @@ class _FlashScreenState extends State<FlashScreen> {
         width: winSize.width,
         height: winSize.height,
         decoration: const BoxDecoration(
+          color: Colors.white,
           image: DecorationImage(
             image: AssetImage('assets/images/pattern.png'),
+            fit: BoxFit.cover,
           ),
         ),
         child: const Column(
