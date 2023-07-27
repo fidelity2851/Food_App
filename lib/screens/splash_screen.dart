@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/commponents/logo.dart';
 import 'package:food_app/screens/onboarding_screen.dart';
+import 'package:food_app/commponents/background_pattern.dart';
 
 class FlashScreen extends StatefulWidget {
   const FlashScreen({Key? key}) : super(key: key);
@@ -35,17 +36,9 @@ class _FlashScreenState extends State<FlashScreen> {
   Widget build(BuildContext context) {
     final Size winSize = MediaQuery.of(context).size;
     return Scaffold(
-      body: Container(
-        width: winSize.width,
-        height: winSize.height,
-        decoration: const BoxDecoration(
-          color: Colors.white,
-          image: DecorationImage(
-            image: AssetImage('assets/images/pattern.png'),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: const Column(
+      body: BackgoundPattern(
+        winSize: winSize,
+        content: const Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Logo(),
