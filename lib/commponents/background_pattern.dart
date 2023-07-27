@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/utitlity/variables.dart';
 
-class BackgoundPattern extends StatelessWidget {
-  const BackgoundPattern({
+class BackgroundPattern extends StatelessWidget {
+  const BackgroundPattern({
     super.key,
     required this.winSize,
     required this.content,
@@ -13,6 +14,7 @@ class BackgoundPattern extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.symmetric(horizontal: DefaultPadding),
       width: winSize.width,
       height: winSize.height,
       decoration: const BoxDecoration(

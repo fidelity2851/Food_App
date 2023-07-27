@@ -36,7 +36,7 @@ class _FlashScreenState extends State<FlashScreen> {
   Widget build(BuildContext context) {
     final Size winSize = MediaQuery.of(context).size;
     return Scaffold(
-      body: BackgoundPattern(
+      body: BackgroundPattern(
         winSize: winSize,
         content: const Column(
           mainAxisAlignment: MainAxisAlignment.center,

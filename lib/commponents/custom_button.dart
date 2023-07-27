@@ -20,10 +20,10 @@ class CustomButton extends StatelessWidget {
             colors: [AppColor.Primary, AppColor.Primary2],
           ),
           borderRadius: BorderRadius.circular(15)),
-      child: const Text(
-        'Next',
+      child: Text(
+        title,
         textAlign: TextAlign.center,
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.white,
           fontSize: 20,
           fontWeight: FontWeight.w500,

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/commponents/custom_button.dart';
+import 'package:food_app/commponents/input_box.dart';
 import 'package:food_app/commponents/logo.dart';
+import 'package:food_app/commponents/background_pattern.dart';
+import 'package:food_app/screens/register_screen.dart';
 import 'package:food_app/utitlity/variables.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -9,18 +12,10 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size winSize = MediaQuery.of(context).size;
-
     return Scaffold(
-      body: Container(
-        width: winSize.width,
-        height: winSize.height,
-        padding: const EdgeInsets.all(DefaultPadding),
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/images/pattern.png'),
-          ),
-        ),
-        child: Column(
+      body: BackgroundPattern(
+        winSize: winSize,
+        content: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Logo(),
@@ -51,13 +46,8 @@ class LoginScreen extends StatelessWidget {
                       blurRadius: 10,
                     )
                   ]),
-              child: TextFormField(
-                decoration: const InputDecoration(
-                  hintText: 'Email',
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide.none,
-                  ),
-                ),
+              child: const InputBox(
+                placeholder: 'Email',
               ),
             ),
             const SizedBox(height: 10),
@@ -76,13 +66,8 @@ class LoginScreen extends StatelessWidget {
                       blurRadius: 10,
                     )
                   ]),
-              child: TextFormField(
-                decoration: const InputDecoration(
-                  hintText: 'Password',
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide.none,
-                  ),
-                ),
+              child: const InputBox(
+                placeholder: 'Password',
               ),
             ),
             const SizedBox(height: 20),
@@ -101,7 +86,8 @@ class LoginScreen extends StatelessWidget {
               children: [
                 Expanded(
                   child: Container(
-                    padding:const  EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 20),
                     decoration: BoxDecoration(
                       color: AppColor.White,
                       borderRadius: BorderRadius.circular(10),
@@ -189,8 +175,16 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            const CustomButton(
-              title: 'Login',
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (context) => const RegisterScreen()),
+                );
+              },
+              child: const CustomButton(
+                title: 'Login',
+              ),
             ),
           ],
         ),
