@@ -3,6 +3,7 @@ import 'package:food_app/commponents/custom_button.dart';
 import 'package:food_app/commponents/logo.dart';
 import 'package:food_app/commponents/background_pattern.dart';
 import 'package:food_app/commponents/input_box.dart';
+import 'package:food_app/screens/congrats_screen.dart';
 import 'package:food_app/utitlity/variables.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -182,12 +183,17 @@ class RegisterScreen extends StatelessWidget {
                       color: AppColor.Grey,
                       fontSize: 17,
                     ),
-                  )
+                  ),
                 ],
               ),
               const SizedBox(height: 30),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                        builder: (context) => const CongratScreen()),
+                  );
+                },
                 child: const CustomButton(
                   title: 'Create Account',
                 ),
