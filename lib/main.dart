@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/screens/splash_screen.dart';
+import 'package:food_app/screens/home_screen.dart';
+// import 'package:food_app/screens/splash_screen.dart';
 
 // Initialize Flutter Main Function
 void main() => runApp(const MovieApp());
@@ -12,7 +13,7 @@ class MovieApp extends StatelessWidget {
     return const SafeArea(
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: FlashScreen(),
+        home: HomeScreen(),
       ),
     );
   }

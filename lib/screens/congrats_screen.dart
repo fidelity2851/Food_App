@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/commponents/background_pattern.dart';
 import 'package:food_app/commponents/custom_button.dart';
+import 'package:food_app/screens/home_screen.dart';
 import 'package:food_app/utitlity/variables.dart';
 
 class CongratScreen extends StatelessWidget {
@@ -43,7 +44,14 @@ class CongratScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const CustomButton(title: 'Try Order'),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const HomeScreen()),
+                );
+              },
+              child: const CustomButton(title: 'Try Order'),
+            ),
             const SizedBox(height: 50),
           ],
         ),
