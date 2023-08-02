@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/commponents/bottom_navbar.dart';
+import 'package:food_app/commponents/menu_item.dart';
 import 'package:food_app/commponents/page_header.dart';
 import 'package:food_app/commponents/page_pattern.dart';
 import 'package:food_app/commponents/page_with_view_button.dart';
@@ -12,22 +14,26 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size winSize = MediaQuery.of(context).size;
     return Scaffold(
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: PagePattern(
-          winSize: winSize,
-          content: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(height: 50),
+      body: PagePattern(
+        winSize: winSize,
+        spaceAround: 0,
+        content: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SizedBox(height: 50),
 
-              // Page Header
-              const PageHeader(),
+            // Page Header
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: DefaultPadding),
+              child: PageHeader(),
+            ),
 
-              const SizedBox(height: 30),
+            const SizedBox(height: 30),
 
-              // Search Box and Filter Bar
-              Row(
+            // Search Box and Filter Bar
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: DefaultPadding),
+              child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Expanded(
@@ -83,57 +89,108 @@ class HomeScreen extends StatelessWidget {
                   )
                 ],
               ),
+            ),
 
-              const SizedBox(height: 30),
+            const SizedBox(height: 30),
 
-              // Advert Banner
-              SizedBox(
+            // Advert Banner
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: DefaultPadding),
+              child: SizedBox(
                 width: winSize.width,
                 child: const Image(
                   fit: BoxFit.contain,
                   image: AssetImage('assets/images/Promo_Advertising.png'),
                 ),
               ),
+            ),
 
-              const SizedBox(height: 30),
+            const SizedBox(height: 30),
 
-              // Title with More Button
-              const TitleWithMoreButton(
+            // Title with More Button
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: DefaultPadding),
+              child: TitleWithMoreButton(
                 title: 'Nearest Restaurant',
                 more: 'View More',
               ),
+            ),
 
-              const SizedBox(height: 20),
+            const SizedBox(height: 10),
 
-              // Popular Restaurants
-              SizedBox(
-                height: 255,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.symmetric(vertical: DefaultPadding),
-                  children: const [
-                    RestaurantItem(
-                      imagePath: 'assets/images/Restaurant1.png',
-                      name: 'Vegan Resto',
-                      time: '12 Mins',
-                    ),
-                    RestaurantItem(
-                      imagePath: 'assets/images/Restaurant1.png',
-                      name: 'Vegan Resto',
-                      time: '12 Mins',
-                    ),
-                    RestaurantItem(
-                      imagePath: 'assets/images/Restaurant1.png',
-                      name: 'Vegan Resto',
-                      time: '12 Mins',
-                    ),
-                  ],
+            // Popular Restaurants
+            SizedBox(
+              height: 260,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                padding: const EdgeInsets.only(
+                  top: DefaultPadding,
+                  left: DefaultPadding,
+                  bottom: DefaultPadding,
                 ),
+                children: const [
+                  RestaurantItem(
+                    imagePath: 'assets/images/Restaurant1.png',
+                    name: 'Vegan Resto',
+                    time: '12 Mins',
+                  ),
+                  RestaurantItem(
+                    imagePath: 'assets/images/Restaurant2.png',
+                    name: 'Healthy Food',
+                    time: '8 Mins',
+                  ),
+                  RestaurantItem(
+                    imagePath: 'assets/images/Restaurant3.png',
+                    name: 'Good Food',
+                    time: '12 Mins',
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+
+            const SizedBox(height: 10),
+
+            // Title with More Button
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: DefaultPadding),
+              child: TitleWithMoreButton(
+                title: 'Popular Menu',
+                more: 'View More',
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            // Popular Menu
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: DefaultPadding),
+              child: Column(
+                children: [
+                  MenuItem(
+                    imagePath: 'assets/images/Menu1.png',
+                    name: 'Herbal Pancake',
+                    category: 'Warung Herbal',
+                    price: '17',
+                  ),
+                  MenuItem(
+                    imagePath: 'assets/images/Menu2.png',
+                    name: 'Fruit Salad',
+                    category: 'Warung Herbal',
+                    price: '17',
+                  ),
+                  MenuItem(
+                    imagePath: 'assets/images/Menu3.png',
+                    name: 'Green Noddle',
+                    category: 'Warung Herbal',
+                    price: '17',
+                  ),
+                ],
+              ),
+            )
+          ],
         ),
       ),
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }

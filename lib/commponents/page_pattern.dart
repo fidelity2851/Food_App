@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/utitlity/variables.dart';
 
 class PagePattern extends StatelessWidget {
   const PagePattern({
     super.key,
     required this.winSize,
+    required this.spaceAround,
     required this.content,
   });
 
   final Size winSize;
+  final double spaceAround;
   final Widget content;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: DefaultPadding),
+      padding: EdgeInsets.symmetric(horizontal: spaceAround),
       width: winSize.width,
       height: winSize.height,
       decoration: const BoxDecoration(
@@ -25,7 +26,10 @@ class PagePattern extends StatelessWidget {
           alignment: Alignment.topRight,
         ),
       ),
-      child: content,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: content,
+      ),
     );
   }
 }

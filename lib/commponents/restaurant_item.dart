@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/utitlity/variables.dart';
 
-
 class RestaurantItem extends StatelessWidget {
   const RestaurantItem({
     super.key,
@@ -27,9 +26,9 @@ class RestaurantItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: AppColor.Black4,
+              color: AppColor.Light,
               offset: const Offset(5, 5),
-              blurRadius: 10,
+              blurRadius: 20,
             ),
           ]),
       child: Column(
@@ -39,6 +38,7 @@ class RestaurantItem extends StatelessWidget {
               height: 120,
               fit: BoxFit.contain,
               image: AssetImage(imagePath)),
+          const SizedBox(height: 5),
           Text(
             name,
             style: TextStyle(
