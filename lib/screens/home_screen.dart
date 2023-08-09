@@ -3,9 +3,10 @@ import 'package:food_app/commponents/bottom_navbar.dart';
 import 'package:food_app/commponents/menu_item.dart';
 import 'package:food_app/commponents/page_header.dart';
 import 'package:food_app/commponents/page_pattern.dart';
-import 'package:food_app/commponents/page_with_view_button.dart';
+import 'package:food_app/commponents/title_with_more_button.dart';
 import 'package:food_app/commponents/restaurant_item.dart';
 import 'package:food_app/commponents/search_filter_bar.dart';
+import 'package:food_app/screens/restaurant_screen.dart';
 import 'package:food_app/utitlity/variables.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -59,6 +60,7 @@ class HomeScreen extends StatelessWidget {
               child: TitleWithMoreButton(
                 title: 'Nearest Restaurant',
                 more: 'View More',
+                page: RestaurantScreen(),
               ),
             ),
 
@@ -66,7 +68,7 @@ class HomeScreen extends StatelessWidget {
 
             // Popular Restaurants
             SizedBox(
-              height: 260,
+              height: 250,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.only(
@@ -102,6 +104,7 @@ class HomeScreen extends StatelessWidget {
               child: TitleWithMoreButton(
                 title: 'Popular Menu',
                 more: 'View More',
+                page: RestaurantScreen(),
               ),
             ),
 

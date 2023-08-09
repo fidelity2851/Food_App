@@ -7,16 +7,18 @@ class RestaurantItem extends StatelessWidget {
     required this.imagePath,
     required this.name,
     required this.time,
+    this.space = 20,
   });
 
   final String imagePath;
   final String name;
   final String time;
+  final double space;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(right: 20),
+      margin: EdgeInsets.only(right: space),
       padding: const EdgeInsets.symmetric(
         vertical: 20,
         horizontal: 20,
@@ -34,10 +36,11 @@ class RestaurantItem extends StatelessWidget {
       child: Column(
         children: [
           Image(
-              width: 140,
-              height: 120,
-              fit: BoxFit.contain,
-              image: AssetImage(imagePath)),
+            width: 140,
+            height: 100,
+            fit: BoxFit.contain,
+            image: AssetImage(imagePath),
+          ),
           const SizedBox(height: 5),
           Text(
             name,

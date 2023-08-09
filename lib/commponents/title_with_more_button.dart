@@ -6,10 +6,12 @@ class TitleWithMoreButton extends StatelessWidget {
     super.key,
     required this.title,
     required this.more,
+    required this.page,
   });
 
   final String title;
   final String more;
+  final Widget page;
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +26,19 @@ class TitleWithMoreButton extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
         ),
-        Text(
-          more,
-          style: TextStyle(
-            color: AppColor.Secondary2,
-            fontSize: 15,
-            fontWeight: FontWeight.w400,
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => page),
+            );
+          },
+          child: Text(
+            more != '' ? more : '',
+            style: TextStyle(
+              color: AppColor.Secondary2,
+              fontSize: 15,
+              fontWeight: FontWeight.w400,
+            ),
           ),
         ),
       ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/screens/home_screen.dart';
 import 'package:food_app/utitlity/variables.dart';
 
 class BottomNavBar extends StatelessWidget {
@@ -24,32 +25,39 @@ class BottomNavBar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              padding: const EdgeInsets.symmetric(
-                vertical: 10,
-                horizontal: 15,
-              ),
-              decoration: BoxDecoration(
-                color: AppColor.Primary4,
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: Row(
-                children: [
-                  const Image(
-                    width: 25,
-                    fit: BoxFit.cover,
-                    image: AssetImage('assets/images/Home.png'),
-                  ),
-                  const SizedBox(width: 10),
-                  Text(
-                    'Home',
-                    style: TextStyle(
-                      color: AppColor.Black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const HomeScreen()),
+                );
+              },
+              child: Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 15,
+                ),
+                decoration: BoxDecoration(
+                  color: AppColor.Primary4,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Row(
+                  children: [
+                    const Image(
+                      width: 25,
+                      fit: BoxFit.cover,
+                      image: AssetImage('assets/images/Home.png'),
                     ),
-                  )
-                ],
+                    const SizedBox(width: 10),
+                    Text(
+                      'Home',
+                      style: TextStyle(
+                        color: AppColor.Black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
             const Image(
