@@ -5,6 +5,7 @@ import 'package:food_app/commponents/page_header.dart';
 import 'package:food_app/commponents/page_pattern.dart';
 import 'package:food_app/commponents/page_with_view_button.dart';
 import 'package:food_app/commponents/restaurant_item.dart';
+import 'package:food_app/commponents/search_filter_bar.dart';
 import 'package:food_app/utitlity/variables.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -31,64 +32,9 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 30),
 
             // Search Box and Filter Bar
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: DefaultPadding),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: Container(
-                      height: 60,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: DefaultPadding / 2,
-                      ),
-                      decoration: BoxDecoration(
-                        color: AppColor.Secondary4,
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Row(
-                        children: [
-                          const Image(
-                            width: 40,
-                            image: AssetImage('assets/images/Search.png'),
-                          ),
-                          const SizedBox(width: 10),
-                          Expanded(
-                            child: TextField(
-                              style: TextStyle(
-                                color: AppColor.Warning3,
-                                fontSize: 15,
-                                fontWeight: FontWeight.w400,
-                              ),
-                              decoration: InputDecoration(
-                                  hintText: 'What do you want to order?',
-                                  hintStyle: TextStyle(
-                                    color: AppColor.Warning3,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                  border: InputBorder.none),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 20),
-                  Container(
-                    width: 60,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      color: AppColor.Secondary4,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: const Image(
-                      width: 40,
-                      image: AssetImage('assets/images/Filter.png'),
-                    ),
-                  )
-                ],
-              ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: DefaultPadding),
+              child: SearchFilterBar(),
             ),
 
             const SizedBox(height: 30),
@@ -176,13 +122,13 @@ class HomeScreen extends StatelessWidget {
                     imagePath: 'assets/images/Menu2.png',
                     name: 'Fruit Salad',
                     category: 'Warung Herbal',
-                    price: '17',
+                    price: '5',
                   ),
                   MenuItem(
                     imagePath: 'assets/images/Menu3.png',
                     name: 'Green Noddle',
                     category: 'Warung Herbal',
-                    price: '17',
+                    price: '15',
                   ),
                 ],
               ),
