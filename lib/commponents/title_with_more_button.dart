@@ -5,8 +5,8 @@ class TitleWithMoreButton extends StatelessWidget {
   const TitleWithMoreButton({
     super.key,
     required this.title,
-    required this.more,
-    required this.page,
+    this.more = '',
+    this.page = const Placeholder(),
   });
 
   final String title;
@@ -33,7 +33,7 @@ class TitleWithMoreButton extends StatelessWidget {
             );
           },
           child: Text(
-            more != '' ? more : '',
+            more,
             style: TextStyle(
               color: AppColor.Secondary2,
               fontSize: 15,
