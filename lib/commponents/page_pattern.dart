@@ -26,10 +26,7 @@ class PagePattern extends StatelessWidget {
           alignment: Alignment.topRight,
         ),
       ),
-      child: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: content,
-      ),
+      child: content,
     );
   }
 }

@@ -24,19 +24,21 @@ class RestaurantItem extends StatelessWidget {
         horizontal: 20,
       ),
       decoration: BoxDecoration(
-          color: AppColor.White,
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(
-              color: AppColor.Light,
-              offset: const Offset(5, 5),
-              blurRadius: 20,
-            ),
-          ]),
+        color: AppColor.White,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: AppColor.Light,
+            offset: const Offset(5, 5),
+            blurRadius: 20,
+          ),
+        ],
+      ),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Image(
-            width: 140,
+            width: 150,
             height: 100,
             fit: BoxFit.contain,
             image: AssetImage(imagePath),

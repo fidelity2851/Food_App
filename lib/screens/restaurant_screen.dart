@@ -14,80 +14,97 @@ class RestaurantScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size winSize = MediaQuery.of(context).size;
     return Scaffold(
-      body: PagePattern(
-        winSize: winSize,
-        spaceAround: 0,
-        content: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SizedBox(height: 50),
+      body: SingleChildScrollView(
+        child: PagePattern(
+          winSize: winSize,
+          spaceAround: 0,
+          content: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(height: 50),
 
-            // Page Header
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: DefaultPadding),
-              child: PageHeader(),
-            ),
-
-            const SizedBox(height: 30),
-
-            // Search Box and Filter Bar
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: DefaultPadding),
-              child: SearchFilterBar(),
-            ),
-
-            const SizedBox(height: 30),
-
-            // Title with More Button
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: DefaultPadding),
-              child: TitleWithMoreButton(
-                title: 'Popular Restaurant',
-                more: '',
-                page: RestaurantScreen(),
+              // Page Header
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: DefaultPadding),
+                child: PageHeader(),
               ),
-            ),
 
-            const SizedBox(height: 20),
+              const SizedBox(height: 30),
 
-            // Popular Restaurants
-            SizedBox(
-              height: 500,
-              child: GridView.count(
-                crossAxisCount: 2,
-                mainAxisSpacing: 20,
-                crossAxisSpacing: 20,
-                scrollDirection: Axis.vertical,
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                children: const [
-                  RestaurantItem(
-                    imagePath: 'assets/images/Restaurant1.png',
-                    name: 'Vegan Resto',
-                    time: '12 Mins',
-                    space: 0,
-                  ),
-                  RestaurantItem(
-                    imagePath: 'assets/images/Restaurant2.png',
-                    name: 'Healthy Food',
-                    time: '8 Mins',
-                    space: 0,
-                  ),
-                  RestaurantItem(
-                    imagePath: 'assets/images/Restaurant1.png',
-                    name: 'Vegan Resto',
-                    time: '12 Mins',
-                    space: 0,
-                  ),
-                  RestaurantItem(
-                    imagePath: 'assets/images/Restaurant2.png',
-                    name: 'Healthy Food',
-                    time: '8 Mins',
-                    space: 0,
-                  ),
-                ],
+              // Search Box and Filter Bar
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: DefaultPadding),
+                child: SearchFilterBar(),
               ),
-            ),
-          ],
+
+              const SizedBox(height: 30),
+
+              // Title with More Button
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: DefaultPadding),
+                child: TitleWithMoreButton(
+                  title: 'Popular Restaurant',
+                  more: '',
+                  page: RestaurantScreen(),
+                ),
+              ),
+
+              const SizedBox(height: 10),
+
+              // Popular Restaurants
+              Expanded(
+                child: GridView.count(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 20,
+                  crossAxisSpacing: 20,
+                  scrollDirection: Axis.vertical,
+                  childAspectRatio: 0.85,
+                  padding: const EdgeInsets.symmetric(
+                    vertical: DefaultPadding,
+                    horizontal: DefaultPadding,
+                  ),
+                  children: const [
+                    RestaurantItem(
+                      imagePath: 'assets/images/Restaurant1.png',
+                      name: 'Vegan Resto',
+                      time: '12 Mins',
+                      space: 0,
+                    ),
+                    RestaurantItem(
+                      imagePath: 'assets/images/Restaurant2.png',
+                      name: 'Healthy Food',
+                      time: '8 Mins',
+                      space: 0,
+                    ),
+                    RestaurantItem(
+                      imagePath: 'assets/images/Restaurant3.png',
+                      name: 'Good Food',
+                      time: '12 Mins',
+                      space: 0,
+                    ),
+                    RestaurantItem(
+                      imagePath: 'assets/images/Restaurant1.png',
+                      name: 'Vegan Resto',
+                      time: '12 Mins',
+                      space: 0,
+                    ),
+                    RestaurantItem(
+                      imagePath: 'assets/images/Restaurant2.png',
+                      name: 'Healthy Food',
+                      time: '8 Mins',
+                      space: 0,
+                    ),
+                    RestaurantItem(
+                      imagePath: 'assets/images/Restaurant3.png',
+                      name: 'Good Food',
+                      time: '12 Mins',
+                      space: 0,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: const BottomNavBar(),
