@@ -44,7 +44,6 @@ class MenuScreen extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: DefaultPadding),
                 child: TitleWithMoreButton(
                   title: 'Popular Menu',
-                  page: MenuScreen(),
                 ),
               ),
 
