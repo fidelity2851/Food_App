@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/commponents/bottom_navbar.dart';
+import 'package:food_app/commponents/custom_button.dart';
 import 'package:food_app/commponents/filter_text.dart';
-import 'package:food_app/commponents/menu_item.dart';
 import 'package:food_app/commponents/page_header.dart';
 import 'package:food_app/commponents/page_pattern.dart';
-import 'package:food_app/commponents/search_filter_bar.dart';
+import 'package:food_app/commponents/search_box.dart';
 import 'package:food_app/commponents/title_with_more_button.dart';
 import 'package:food_app/utitlity/variables.dart';
 
@@ -34,7 +33,7 @@ class SearchFilterScreen extends StatelessWidget {
               // Search Box and Filter Bar
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: DefaultPadding),
-                child: SearchFilterBar(),
+                child: SearchBox(),
               ),
 
               SizedBox(height: 30),
@@ -49,6 +48,7 @@ class SearchFilterScreen extends StatelessWidget {
 
               SizedBox(height: 20),
 
+              // Filter Text
               Row(
                 children: [
                   FilterText(
@@ -60,12 +60,70 @@ class SearchFilterScreen extends StatelessWidget {
                 ],
               ),
 
-              SizedBox(height: 10),
+              SizedBox(height: 20),
+
+              // Title with More Button
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: DefaultPadding),
+                child: TitleWithMoreButton(
+                  title: 'Location',
+                ),
+              ),
+
+              SizedBox(height: 20),
+
+              // Filter Text
+              Row(
+                children: [
+                  FilterText(
+                    title: '1km',
+                  ),
+                  FilterText(
+                    title: '>10km',
+                  ),
+                  FilterText(
+                    title: '<10km',
+                  ),
+                ],
+              ),
+
+              SizedBox(height: 20),
+
+              // Title with More Button
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: DefaultPadding),
+                child: TitleWithMoreButton(
+                  title: 'Food',
+                ),
+              ),
+
+              SizedBox(height: 20),
+
+              // Filter Text
+              Row(
+                children: [
+                  FilterText(
+                    title: 'Cake',
+                  ),
+                  FilterText(
+                    title: 'Soup',
+                  ),
+                  FilterText(
+                    title: 'Main Course',
+                  ),
+                ],
+              ),
+
+              SizedBox(height: 20),
             ],
           ),
         ),
       ),
-      bottomNavigationBar: const BottomNavBar(),
+      bottomNavigationBar: Container(
+        color: AppColor.White,
+        padding: const EdgeInsets.all(DefaultPadding),
+        child: const CustomButton(title: 'Search'),
+      ),
     );
   }
 }
