@@ -3,14 +3,14 @@ import 'package:food_app/commponents/logo.dart';
 import 'package:food_app/screens/onboarding_screen.dart';
 import 'package:food_app/commponents/background_pattern.dart';
 
-class FlashScreen extends StatefulWidget {
-  const FlashScreen({Key? key}) : super(key: key);
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
 
   @override
-  State<FlashScreen> createState() => _FlashScreenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _FlashScreenState extends State<FlashScreen> {
+class _SplashScreenState extends State<SplashScreen> {
   int delayTime = 2000;
 
   @override
